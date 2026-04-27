@@ -192,16 +192,17 @@
 // ----------------------------
 
 // ADC macros and settings
-
+//电流检测反向
+#define INVERTED_SHUNT_POLARITY
 // Component parameters (can be overridden)
 #ifndef V_REG
 #define V_REG					3.3
 #endif
 #ifndef VIN_R1
-#define VIN_R1					39000.0
+#define VIN_R1					35700.0
 #endif
 #ifndef VIN_R2
-#define VIN_R2					2200.0
+#define VIN_R2					3300.0
 #endif
 #ifndef CURRENT_AMP_GAIN
 #define CURRENT_AMP_GAIN		20.0
@@ -210,7 +211,7 @@
 #ifdef HW60_IS_HP
 #define CURRENT_SHUNT_RES		0.0003
 #else
-#define CURRENT_SHUNT_RES		0.0005
+#define CURRENT_SHUNT_RES		0.0010
 #endif
 #endif
 
