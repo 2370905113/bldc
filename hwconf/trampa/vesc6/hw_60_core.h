@@ -205,11 +205,11 @@
 #define VIN_R2					3300.0
 #endif
 #ifndef CURRENT_AMP_GAIN
-#define CURRENT_AMP_GAIN		20.0
+#define CURRENT_AMP_GAIN		50.0
 #endif
 #ifndef CURRENT_SHUNT_RES
 #ifdef HW60_IS_HP
-#define CURRENT_SHUNT_RES		0.0003
+#define CURRENT_SHUNT_RES		0.0010
 #else
 #define CURRENT_SHUNT_RES		0.0010
 #endif
