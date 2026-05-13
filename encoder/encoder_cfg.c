@@ -36,16 +36,18 @@ static THD_WORKING_AREA(encoder_thread_wa, 256);
 #define SPI_DATASIZE_8BIT				0
 #define SPI_DATASIZE_16BIT				SPI_CR1_DFF
 
+#define AS504x_MOSI_GPIO				GPIOA
+#define AS504x_MOSI_PIN					7
 AS504x_config_t encoder_cfg_as504x = {
 		{
-				HW_HALL_ENC_GPIO3, HW_HALL_ENC_PIN3,
-				HW_HALL_ENC_GPIO1, HW_HALL_ENC_PIN1,
+				GPIOA, 4,
+				GPIOA, 5,
 #ifdef AS504x_MOSI_GPIO
 				AS504x_MOSI_GPIO, AS504x_MOSI_PIN,
 #else
 				0, 0,
 #endif
-				HW_HALL_ENC_GPIO2, HW_HALL_ENC_PIN2,
+				GPIOA, 6,
 				{{NULL, NULL}, NULL, NULL} // Mutex
 		},
 

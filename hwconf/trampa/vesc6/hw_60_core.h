@@ -198,22 +198,22 @@
 #define V_REG					3.3
 #endif
 #ifndef VIN_R1
-#define VIN_R1					39000.0
+#define VIN_R1					35700.0
 #endif
 #ifndef VIN_R2
-#define VIN_R2					2200.0
+#define VIN_R2					3300.0
 #endif
 #ifndef CURRENT_AMP_GAIN
-#define CURRENT_AMP_GAIN		20.0
+#define CURRENT_AMP_GAIN		50.0
 #endif
 #ifndef CURRENT_SHUNT_RES
 #ifdef HW60_IS_HP
-#define CURRENT_SHUNT_RES		0.0003
+#define CURRENT_SHUNT_RES		0.001
 #else
-#define CURRENT_SHUNT_RES		0.0005
+#define CURRENT_SHUNT_RES		0.001
 #endif
 #endif
-
+#define INVERTED_SHUNT_POLARITY
 // Input voltage
 #define GET_INPUT_VOLTAGE()		((V_REG / 4095.0) * (float)ADC_Value[ADC_IND_VIN_SENS] * ((VIN_R1 + VIN_R2) / VIN_R2))
 
@@ -290,6 +290,8 @@
 #define HW_HALL_ENC_PIN2		7
 #define HW_HALL_ENC_GPIO3		GPIOC
 #define HW_HALL_ENC_PIN3		8
+
+
 #define HW_ENC_TIM				TIM3
 #define HW_ENC_TIM_AF			GPIO_AF_TIM3
 #define HW_ENC_TIM_CLK_EN()		RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM3, ENABLE)
